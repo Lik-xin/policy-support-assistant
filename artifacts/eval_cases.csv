@@ -1,0 +1,51 @@
+case_id,workflow,risk_match,escalation_match,target_match,citation_match,auto_promise_refund_fail,score,draft_reply,internal_notes,risk_level,escalation_required,escalation_target,cited_policy_ids
+invoice_copy_01,baseline,True,True,True,False,False,4,"Hello,
+
+I can help you with that. Please allow me a moment to retrieve your April renewal invoice. I will send it to you as soon as possible.
+
+Thank you for your patience.",Customer is requesting a copy of their April renewal invoice for expense reporting. Ownership has been verified. The Pro tier account is in good standing. The invoice should be readily available.,low,False,none,
+invoice_copy_01,grounded,True,True,True,True,False,5,I can help you with that! I've resent the invoice for your April renewal to the billing contact on file. Please let me know if you have any other questions.,Customer requested a copy of their April renewal invoice for expense reporting. Ownership is verified and the request is routine. Sent invoice copy to billing contact.,low,False,none,INVOICE_01
+refund_inside_01,baseline,True,False,False,False,False,2,"Hello,
+
+Thank you for reaching out. I understand you forgot to cancel your subscription before the renewal date and are requesting a refund due to minimal usage. 
+
+Our standard policy is that subscriptions renew automatically, and we do not typically offer refunds for renewals if the cancellation request comes after the renewal date. However, I will review your account and usage details to see if any exceptions can be made in this instance.
+
+I will follow up with you within 24-48 hours.
+
+Best regards,
+[Your Name]",Customer forgot to cancel before renewal and is requesting a refund. Account tier is Pro. Ownership is verified. Standard policy is no refunds after renewal. Need to check usage and determine if an exception is warranted. This may require manager approval.,medium,True,billing,
+refund_inside_01,grounded,True,False,False,False,False,2,"We received your request for a refund due to forgetting to cancel before your renewal. I understand you'd like to have this reviewed. Since this request is outside our standard policy window, I've escalated it to our billing team for a manual decision. They will review your case and reach out to you with an update.",Customer forgot to cancel before renewal and is requesting a refund. The renewal was 3 days ago. The account is on the Pro tier. Ownership is verified. Policy REFUND_02 applies because the request is outside the standard 7-day window for automatic renewals. The case needs to be escalated to billing for a manual decision.,medium,True,billing,REFUND_02
+refund_outside_01,baseline,True,False,True,False,False,3,"Hello,
+
+Thank you for reaching out. I understand you're requesting a refund for recent charges. To help me investigate this further, could you please provide the specific date of the charge you are referring to and any relevant transaction IDs?
+
+Once I have this information, I can review your account activity and the charges in question.
+
+Best regards,
+[Your Name]",Customer is requesting a full refund despite acknowledging heavy usage of the app. Ownership is verified. Need to gather more information about the specific charge to proceed.,medium,False,billing,
+refund_outside_01,grounded,True,True,True,True,False,5,"We received your refund request. As your usage this month has been heavy and the charge was over two weeks ago, this falls outside our standard refund policy. I have escalated your request to our billing team for a manual review. They will reach out to you with a decision.",Customer is requesting a refund for a charge over two weeks ago and has used the app heavily. This is outside the REFUND_01 policy window and usage threshold. Escalating to billing for a manual decision per REFUND_02.,medium,True,billing,REFUND_02
+ownership_change_01,baseline,False,False,True,False,False,2,"Thank you for reaching out. To ensure the security of your account, we require ownership verification before making changes to billing contacts or account downgrades. Please follow the instructions in the verification email we've sent to the account owner's email address. Once verified, we'll be happy to assist with your request.",Customer wants to change billing contact and downgrade to Free. Ownership has not been verified. Need to prompt for verification before proceeding.,medium,False,account,
+ownership_change_01,grounded,False,True,True,True,False,4,"Thank you for reaching out. To ensure account security and compliance, we require ownership verification before making changes to account details such as billing contacts or plan levels. Please follow the instructions [link to verification process] to verify your account ownership. Once verified, we will be able to process your request to change the billing contact and downgrade your account.","Customer is requesting to change billing contact and downgrade account. Ownership is not verified. As per OWNERSHIP_01, account changes require ownership verification. Escalation to account operations is needed.",medium,True,account,OWNERSHIP_01
+security_01,baseline,True,True,True,False,False,4,"We understand your concern regarding the recent login activity. To help us investigate this matter thoroughly, please confirm the approximate time of the suspicious login and any other details you may recall. We will review our logs and provide you with information regarding the activity on your account.","Customer is concerned about a potential account compromise due to an unrecognized login from another country. Ownership has been verified. The account tier is Enterprise, which may have specific security protocols. Need to investigate login logs.",high,True,security,
+security_01,grounded,True,True,True,True,False,5,"We received your report of suspicious login activity. As per our policy, we have escalated this to our security team for urgent review. They will investigate the activity and reach out to you with their findings. We appreciate your patience as we work to ensure your account's security.","Customer reported suspicious login from another country. Ownership is verified. Due to the nature of the report (potential compromise), this must be escalated to security as per SECURITY_01. Support should not speculate on the cause or disclose internal controls.",high,True,security,SECURITY_01
+legal_01,baseline,True,True,True,False,False,4,"We understand your concern regarding the recent service disruption and its impact on your business operations. We are investigating the root cause of the outage and will provide a detailed incident report once our analysis is complete. Regarding your request for a written statement accepting liability, our standard procedure requires a thorough review by our legal team. We will escalate this request accordingly and aim to provide a response within 3-5 business days.",Customer is requesting a written statement accepting liability due to an outage. Ownership is verified and they are on an Enterprise tier. This requires legal review.,high,True,legal,
+legal_01,grounded,True,True,True,True,False,5,"We have received your request and understand your concern regarding the recent outage. This matter has been escalated internally for review, and we will follow up with you once we have more information. We appreciate your patience.",Customer is requesting a written statement accepting liability due to an outage. Ownership is verified. This falls under LEGAL_01 due to the liability claim and demand for a statement. Escalating to legal.,high,True,legal,LEGAL_01
+data_export_01,baseline,False,True,True,False,False,3,"Hello,
+
+Thank you for reaching out. We have received your request for the Q3 data export. As per our policy for Enterprise accounts, data exports are processed within 3-5 business days. You will receive a confirmation email once the export is ready.
+
+Best regards,
+[Your Name/Support Team]",Customer is verified owner and on Enterprise tier. Standard data export request for last quarter. This is a routine request for an Enterprise customer. No immediate red flags.,low,False,none,
+data_export_01,grounded,False,True,True,True,False,4,"Hello,
+
+Thank you for your request. As a verified owner, you are eligible for a standard data export. We will process your request and you can expect the export to be delivered within 3 business days.
+
+Best regards,
+Support Team","Customer is a verified owner and requested a standard data export. This is covered by DATA_EXPORT_01. Ownership is verified, so no need to follow OWNERSHIP_01.",low,False,none,DATA_EXPORT_01
+refund_unverified_01,baseline,False,True,True,False,False,3,"Thank you for reaching out. I understand you're requesting a refund for yesterday's renewal and need to update the billing contact information. Since you are not the account owner, I will need to escalate this to our account management team to verify ownership and process your requests. They will be in touch shortly.","Customer is requesting a refund and a billing contact change. They state they are not the account owner, and ownership has not been verified. This requires escalation to the account team to verify ownership before any actions can be taken.",medium,True,account,
+refund_unverified_01,grounded,True,True,True,True,False,5,"Thank you for reaching out. I understand you're requesting a refund for your recent renewal and need to update the billing contact information. I also see that you are not the account owner. 
+
+Regarding the refund, I've noted your request and sent it for review. 
+
+For changes to billing contacts or account information, we require verified account ownership. Since ownership is not yet verified, I've escalated this part of your request to our account operations team for further review. They will reach out to you if additional information is needed.",Customer is requesting a refund and a billing contact change. Ownership is not verified. Refund request is outside of REFUND_01 due to unverified ownership and potential usage. Billing contact change is outside of OWNERSHIP_01 due to unverified ownership. Both aspects need escalation.,high,True,account,OWNERSHIP_01|REFUND_02

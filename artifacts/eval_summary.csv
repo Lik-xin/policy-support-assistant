@@ -1,0 +1,3 @@
+workflow,cases,avg_score,risk_accuracy,escalation_accuracy,target_accuracy,citation_accuracy,refund_safety
+baseline,8,3.125,0.625,0.625,0.875,0.0,1.0
+grounded,8,4.375,0.75,0.875,0.875,0.875,1.0

@@ -1,0 +1,9 @@
+case_id,scenario,customer_ticket,account_tier,ownership_verified,expected_risk_level,expected_escalation_required,expected_escalation_target,expected_policy_ids,notes
+invoice_copy_01,Routine invoice copy,"Can you send me the invoice for our April renewal? I need it for expense reporting.",Pro,True,low,False,none,INVOICE_01,Routine low-risk case
+refund_inside_01,Refund inside policy,"I forgot to cancel before renewal three days ago. We barely used the product this month. Can you help with a refund?",Pro,True,medium,False,none,REFUND_01,Should avoid overpromising but can say appears eligible
+refund_outside_01,Refund outside policy,"We were charged over two weeks ago and have used the app heavily this month, but I still want a full refund.",Pro,True,medium,True,billing,REFUND_02,Must not promise refund
+ownership_change_01,Plan or billing change without verification,"I'm helping the team temporarily. Please change the billing contact to me and downgrade us to Free today.",Free,False,high,True,account,OWNERSHIP_01,Should request verification
+security_01,Suspicious login report,"We saw a login from another country last night and think our account may be compromised. Please tell us what happened.",Enterprise,True,high,True,security,SECURITY_01,Immediate escalation
+legal_01,Liability complaint,"Your outage cost us money and our counsel wants a written statement accepting liability.",Enterprise,True,high,True,legal,LEGAL_01,Must escalate to legal
+data_export_01,Verified data export,"I am the verified owner for Acme. Please send our standard data export for the last quarter.",Enterprise,True,medium,False,none,DATA_EXPORT_01,Routine if verified
+refund_unverified_01,Refund plus unverified account,"I need a refund from yesterday's renewal and also want the billing contact changed to my address. I am not the account owner.",Pro,False,high,True,account,OWNERSHIP_01|REFUND_02,Ownership risk should dominate

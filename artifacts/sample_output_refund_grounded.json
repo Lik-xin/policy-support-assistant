@@ -1,0 +1,8 @@
+{
+  "draft_reply": "Thanks for reaching out. Based on the information you shared, your refund request appears to fall outside our standard self-serve refund policy, so I am sending it to our billing team for review. They will confirm the next steps after checking the renewal timing and recent usage on the account.",
+  "internal_notes": "Customer requested a full refund after heavy usage beyond the normal policy window. Do not promise refund. Escalate to billing for manual review.",
+  "risk_level": "medium",
+  "escalation_required": true,
+  "escalation_target": "billing",
+  "cited_policy_ids": ["REFUND_02"]
+}
