@@ -33,13 +33,19 @@ def _grounded_policy_block(sections: list[PolicySection]) -> str:
 
 
 def _sanitize_baseline_reply(reply: SupportReply) -> SupportReply:
-    return reply.model_copy(update={"cited_policy_ids": []})
+    updates = {"cited_policy_ids": []}
+    if not reply.escalation_required:
+        updates["escalation_target"] = "none"
+    return reply.model_copy(update=updates)
 
 
 def _sanitize_grounded_reply(reply: SupportReply, retrieved: list[PolicySection]) -> SupportReply:
     allowed_ids = {section.policy_id for section in retrieved}
     filtered_ids = [policy_id for policy_id in reply.cited_policy_ids if policy_id in allowed_ids]
-    return reply.model_copy(update={"cited_policy_ids": filtered_ids})
+    updates = {"cited_policy_ids": filtered_ids}
+    if not reply.escalation_required:
+        updates["escalation_target"] = "none"
+    return reply.model_copy(update=updates)
 
 
 def generate_baseline_reply(context: TicketContext) -> SupportReply:
