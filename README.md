@@ -220,6 +220,23 @@ streamlit run app.py
 
 Then enter a support ticket, choose the account tier, mark whether ownership is verified, and click **Compare baseline vs grounded**.
 
+### Demonstrate the workflow in the terminal
+
+If you want quick evidence that the project works without opening the app, run:
+
+```bash
+python terminal_demo.py --case-id refund_outside_01
+```
+
+This prints:
+
+- the ticket context
+- the prompt-only baseline output
+- the policy-grounded output
+- the retrieved policy sections used by the grounded workflow
+
+For a presentation or grading demo, this is the fastest terminal-based walkthrough because it shows the business workflow end to end in one command.
+
 ### Run the evaluation
 
 ```bash
